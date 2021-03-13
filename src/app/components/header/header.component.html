@@ -1,0 +1,5 @@
+<header class="header">
+    <img #logo class="header__logo" src="../../../assets/logo.svg" alt="logo" />
+    <button (click)="toggleInput(logo)" class="header__search-button"><fa-icon [icon]="['fas', 'search']"></fa-icon></button>
+    <input *ngIf="isSearching" class="header__search-input" type="text">
+</header>
