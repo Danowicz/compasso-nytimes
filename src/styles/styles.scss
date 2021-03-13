@@ -1,13 +1,21 @@
+@import 'reset';
+
 :root {
 
     // COLORS
-    --main-color: #2A2A2A;
-    --secondary-color: ##fff;
+    --main-color: #000000;
+    --secondary-color: #ffffff;
+
     --primary-text-color: #2A2A2A;
     --secondary-text-color: #757575;
 
+    --light-gray: #fcfcfc;
+
+    // GEOMETRY
+    --grid-margin: 26px;
+
     // TYPOGRAPHY
-    font-size: 62.5%;
+    font-size: 6.25%;
 
     body {
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;900&display=swap');
