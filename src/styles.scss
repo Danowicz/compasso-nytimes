@@ -1,0 +1,17 @@
+:root {
+
+    // COLORS
+    --main-color: #2A2A2A;
+    --secondary-color: ##fff;
+    --primary-text-color: #2A2A2A;
+    --secondary-text-color: #757575;
+
+    // TYPOGRAPHY
+    font-size: 62.5%;
+
+    body {
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;900&display=swap');
+        font-family: 'Roboto Slab', serif;
+    }
+
+}
