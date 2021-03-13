@@ -4,12 +4,44 @@
     justify-content: space-between;
     padding: 20px 0;
 
-    &__search-button {
-        color: var(--secondary-color);
-        background-color: var(--main-color);
-        border: none;
-        border-radius: 5px;
-        height: 50px;
-        width: 50px;
+    &__logo {
+        height: 25px;
+
+        &--symbol {
+            height: 35px;
+        }
+    }
+
+    & .search {
+        display: flex;
+        justify-content: flex-end;
+
+        &__button {
+            color: var(--secondary-color);
+            background-color: var(--main-color);
+            border: none;
+            height: 50px;
+            width: 50px;
+            flex-shrink: 0;
+
+            &:disabled {
+                background-color: var(--disabled-color);
+            }
+        }
+
+        &__input {
+            height: 50px;
+            width: 80%;
+            margin-right: 10px;
+            padding: 0 10px;
+            font-size: 16rem;
+            border: none;
+            border-bottom: 2px solid var(--main-color);
+            border-radius: none;
+            background-color: var(--light-gray);
+            font-family: 'Lato';
+            font-weight: 400;
+        }
+
     }
 }

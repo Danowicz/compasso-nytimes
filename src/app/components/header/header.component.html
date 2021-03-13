@@ -1,5 +1,7 @@
 <header class="header">
     <img #logo class="header__logo" src="../../../assets/logo.svg" alt="logo" />
-    <button (click)="toggleInput(logo)" class="header__search-button"><fa-icon [icon]="['fas', 'search']"></fa-icon></button>
-    <input *ngIf="isSearching" class="header__search-input" type="text">
+    <div class="search">
+        <input *ngIf="isSearching" placeholder="Mars exploration" class="search__input" type="text" [formControl]="queryInput">
+        <button [disabled]="isSearching && !queryInput.value" (click)="handleSearch()" class="search__button"><fa-icon [icon]="['fas', isSearching ? 'check' : 'search']"></fa-icon></button>
+    </div>
 </header>
