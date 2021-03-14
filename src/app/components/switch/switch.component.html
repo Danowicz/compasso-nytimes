@@ -1,0 +1,5 @@
+<div class="switch" (click)="switchFilter()">
+    <button [ngClass]="{'switch__button--active': selectedFilter === 'science'}" class="switch__button">Science</button>
+    <fa-icon [icon]="icon"></fa-icon>
+    <button [ngClass]="{'switch__button--active': selectedFilter === 'tech'}" class="switch__button">Tech</button>
+</div>
