@@ -2,24 +2,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px var(--grid-margin);
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.017),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.024),
+        0 12.5px 10px rgba(0, 0, 0, 0.03),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.036),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.043),
+        0 100px 80px rgba(0, 0, 0, 0.06);
 
     &__logo {
         height: 25px;
+        margin-right: var(--grid-margin);
 
         &--symbol {
-            height: 35px;
+            height: 40px;
         }
     }
 
     & .search {
         display: flex;
         justify-content: flex-end;
+        width: 100%;
 
         &__button {
             color: var(--secondary-color);
             background-color: var(--main-color);
             border: none;
+            border-radius: 5px;
             height: 50px;
             width: 50px;
             flex-shrink: 0;
@@ -27,20 +37,24 @@
             &:disabled {
                 background-color: var(--disabled-color);
             }
+
+            fa-icon {
+                pointer-events: none;
+            }
         }
 
         &__input {
             height: 50px;
-            width: 80%;
+            width: 100%;
             margin-right: 10px;
-            padding: 0 10px;
-            font-size: 16rem;
+            padding: 0 20px;
+            font-size: 16px;
             border: none;
-            border-bottom: 2px solid var(--main-color);
-            border-radius: none;
+            border-radius: 5px;
             background-color: var(--light-gray);
             font-family: 'Lato';
             font-weight: 400;
+            outline: none;
         }
 
     }
