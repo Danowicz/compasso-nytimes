@@ -1,8 +1,14 @@
 .header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px var(--grid-margin);
+    height: var(--header-height);
+    padding: 0 var(--grid-margin);
+    background-color: var(--secondary-color);
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.017),
         0 6.7px 5.3px rgba(0, 0, 0, 0.024),
