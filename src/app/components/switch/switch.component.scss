@@ -14,6 +14,7 @@
     align-items: center;
     width: 200px;
     box-shadow: 0 5px 15px rgba(0,0,0, .5);
+    cursor: pointer;
 
     &__button {
         background: transparent;
@@ -25,6 +26,7 @@
         color: var(--disabled-color);
         transition: all .2s ease-in;
         outline: none;
+        pointer-events: none;
 
         &--active {
             color: var(--secondary-color);
