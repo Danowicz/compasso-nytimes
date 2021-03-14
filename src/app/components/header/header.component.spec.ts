@@ -31,16 +31,16 @@ describe('HeaderComponent', () => {
     });
 
     it('should have a search button', () => {
-        expect(de.query(By.css('.header__search-button')).nativeElement).toBeTruthy();
+        expect(de.query(By.css('.search__button')).nativeElement).toBeTruthy();
     });
 
     it('should open a search input when search button is clicked', async () => {
-        const button = de.query(By.css('.header__search-button'));
+        const button = de.query(By.css('.search__button'));
         button.triggerEventHandler('click', null);
         fixture.detectChanges();
         fixture.whenStable().then(() => {
             expect(component.isSearching).toBeTruthy();
-            expect(de.query(By.css('.header__search-input'))).toBeTruthy();
+            expect(de.query(By.css('.search__input'))).toBeTruthy();
         })
     });
 });
