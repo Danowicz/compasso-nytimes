@@ -1,0 +1,27 @@
+<div class="modal">
+    <div class="modal-header">
+        <span class="modal-header__type">//&nbsp; {{news?.news_desk}}</span>
+        <button (click)="closeModal.emit()" class="modal-header__close"><fa-icon [icon]="['fas', 'times']"></fa-icon></button>
+    </div>
+    <h2 class="modal__headline">{{news?.headline?.main}}</h2>
+    <div class="paragraph">
+        <div class="paragraph__image-container" *ngIf="news?.multimedia?.length">
+            <div class="paragraph__image-wrapper">
+                <fa-icon [size]="'2x'" [spin]="true" [icon]="['fas', 'compass']"></fa-icon>
+                <img class="paragraph__image" [src]="'https://www.nytimes.com/' + news?.multimedia[0]?.url">
+            </div>
+        </div>
+        <p class="paragraph__text" >{{news?.lead_paragraph}}</p>
+    </div>
+    <div class="info">
+        <p class="info__byline">{{news?.byline?.original || 'The New York Times'}}</p>
+        <p class="info__date">{{news?.pub_date | date}}</p>
+    </div>
+    <div class="links">
+        <button (click)="share()" class="links__share"><fa-icon [icon]="['fas', 'share-alt']"></fa-icon>Share</button>
+        <a *ngIf="news?.web_url" class="links__link" [href]="news?.web_url" target="_blank">Read full story ➜</a>
+    </div>
+
+</div>
+<div class="shadow"></div>
+<share-panel [parameters]="shareModalParameters" *ngIf="isSharing" (shareModal)="isSharing = false"></share-panel>
