@@ -1,0 +1,17 @@
+<div id="panel" class="panel" [ngStyle]="{backgroundColor: parameters.bgColor}">
+    <button (click)="this.shareModal.emit(false)" id="btn-close" class="panel__close"><fa-icon [icon]="['fas', 'times']"></fa-icon></button>
+    <p class="panel__title">Share</p>
+    <div class="buttons__grid">
+        <div class="buttons__wrapper" *ngFor="let link of shareData">
+        <a [ngStyle]="{backgroundColor: parameters.iconsColor}" *ngIf="link.name !== 'copy'" target="_blank" [href]="link.shareLink" class="buttons__btn">
+            <fa-icon [ngStyle]="{color: parameters.fontColor}" [icon]="link.icon"></fa-icon>
+        </a>
+        <button [ngStyle]="{backgroundColor: parameters.iconsColor}" *ngIf="link.name === 'copy'" (click)="copyLink(link.shareLink)" target="_blank" class="buttons__btn">
+            <fa-icon [ngStyle]="{color: parameters.fontColor}" [icon]="linkCopyed || link.icon"></fa-icon>
+        </button>
+        <p class="buttons__label">{{link.name}}</p>
+        </div>
+    </div>
+</div>
+
+<div [ngStyle]="{opacity: parameters.shadowOpacity}" id="shadow"></div>
