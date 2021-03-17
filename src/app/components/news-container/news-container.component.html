@@ -1,0 +1,11 @@
+<article class="news">
+    <h2 class="news__headline">{{news?.headline?.main}}</h2>
+    <p class="news__abstract" >{{news?.abstract}}</p>
+    <div class="news-info">
+        <div class="news-info__byline">
+            <div class="news-info__byline-avatar"><fa-icon [icon]="['fas', 'user']"></fa-icon></div>
+            <p class="news-info__byline-text">{{news?.byline?.original || 'The New York Times'}}</p>
+        </div>
+        <p class="news-info__date">{{news?.pub_date | date}}</p>
+    </div>
+</article>
