@@ -1,27 +1,62 @@
-# CompassoNytimes
+# Compasso Times 📰
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+Projeto de consumo de noticias da [API do New York Times](https://developer.nytimes.com/docs/articlesearch-product/1/overview), feito como desafio técnico do processo seletivo da [Compasso UOL](https://compassouol.com/).
 
-## Development server
+## ▪️ Executando o projeto
+Localhost: `ng s`
+Local IP: `ng s --host YOUR_IP`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Karma para testes unitários: `ng test`
 
-## Code scaffolding
+## ▪️ Detalhes do projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### // Requisitos
 
-## Build
+Junto ao desafio foram entregues os seguintes requisitos: 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+-   **Obrigatório**:
+    
+    -   [x] Consumir a api do NEW YORK TIMES.
+    -   [x] Obter as notícias sobre as categorias tecnologia e ciências.
+    -   [x] Ao clicar na notícia deve exibir um modal contendo título, url e uma breve descrição da noticia.
+    -   [x] Para a criação do visual, podem ser usados frameworks modernos como o material e o bootstrap.
+    -   [x] Deve conter um README contendo instruções para executar o projeto e uma breve descrição das escolhas feitas dentro do projeto.
+    -   [x] Será levado em consideração a clareza do código e boas práticas.
+-   **Opcionais**:
+    
+    -   [x] Para a criação do visual, podem ser usados estilos autorais.
+    -   [x] O uso da imagem das notícias que vem do Json é opcional, mas caso colocado deve ser analisado para que não impacte a usabilidade.
+    -   [x] A aplicação conter testes unitários (preferencialmente TDD).
+    -   [x] Demonstração de conhecimento da pirâmide de testes (Pode ser uma descrição no README).
+   <hr>
+   
+   ### // Design
+   Antes do desenvolvimento das telas, foi realizado o levantamento da usabilidade de outras aplicações de noticias, para entender como o usuário médio interage com interfaces como a do New York Times.
+   
+A aplicação foi desenhada no Figma, utilizando a técnica mobile fisrt, tornando-a atraente sem comprometer a experiência de uso em smartphones e desktops.
+<hr>
 
-## Running unit tests
+### // Testes
+Por se tratar de uma aplicação com pouco desacoplamento e baixo nível de abstração, com base na pirâmide de testes, todos os componentes foram desenvolvidos a partir dos testes unitários.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Os testes foram escritos utilizando **Jasmine** e podem ser executados através do **Karma** com o comando `ng test`.
 
-## Running end-to-end tests
+<hr>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### // Desenvolvimento
 
-## Further help
+**Dependências**:
+- `ngx-infinite-scroll`:	Realizar requests ao scrollar .
+- `@fortawesome/angular-fontawesome`: Ícones em forma de fonte para o Angular.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A aplicação foi desenvolvida utilizando a versão mais recente do **Angular (v11)**.
+
+Nenhuma biblioteca de estilos foi utilizada dentro do projeto, tendo todos os estilos sido desenvolvidos exclusivamente para a aplicação.
+<br>
+**Código**:
+
+Todo o código foi escrito utilizando boas práticas de desenvolvimento como **TDD** e **Clean Architecture**, sempre levando em consideração a manutenibilidade e clareza do código , os componentes foram desenvolvidos com base nos testes feitos com **Jasmine**.
+<br>
+**Versionamento:**
+
+Todo o código foi versionado utilizando Git e [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
