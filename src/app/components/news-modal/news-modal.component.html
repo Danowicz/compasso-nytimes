@@ -8,7 +8,7 @@
         <div class="paragraph__image-container" *ngIf="news?.multimedia?.length">
             <div class="paragraph__image-wrapper">
                 <fa-icon [size]="'2x'" [spin]="true" [icon]="['fas', 'compass']"></fa-icon>
-                <img class="paragraph__image" [src]="'https://www.nytimes.com/' + news?.multimedia[0]?.url">
+                <img class="paragraph__image" [src]="'https://www.nytimes.com/' + news.multimedia[0].url">
             </div>
         </div>
         <p class="paragraph__text" >{{news?.lead_paragraph}}</p>
