@@ -1,6 +1,6 @@
 # Compasso Times 📰
 
-Projeto de consumo de noticias da [API do New York Times](https://developer.nytimes.com/docs/articlesearch-product/1/overview), feito como desafio técnico do processo seletivo da [Compasso UOL](https://compassouol.com/).
+Projeto de consumo de notícias da [API do New York Times](https://developer.nytimes.com/docs/articlesearch-product/1/overview), feito como desafio técnico do processo seletivo da [Compasso UOL](https://compassouol.com/).
 
 ## ▪️ Executando o projeto
 Localhost: `ng s`
@@ -31,7 +31,7 @@ Junto ao desafio foram entregues os seguintes requisitos:
    <hr>
    
    ### // Design
-   Antes do desenvolvimento das telas, foi realizado o levantamento da usabilidade de outras aplicações de noticias, para entender como o usuário médio interage com interfaces como a do New York Times.
+   Antes do desenvolvimento das telas, foi realizado o levantamento da usabilidade de outras aplicações de notícias, para entender como o usuário médio interage com interfaces como a do New York Times.
    
 A aplicação foi desenhada no Figma, utilizando a técnica mobile fisrt, tornando-a atraente sem comprometer a experiência de uso em smartphones e desktops.
 <hr>
@@ -53,9 +53,11 @@ A aplicação foi desenvolvida utilizando a versão mais recente do **Angular (v
 
 Nenhuma biblioteca de estilos foi utilizada dentro do projeto, tendo todos os estilos sido desenvolvidos exclusivamente para a aplicação.
 <br>
+<br>
 **Código**:
 
 Todo o código foi escrito utilizando boas práticas de desenvolvimento como **TDD** e **Clean Architecture**, sempre levando em consideração a manutenibilidade e clareza do código , os componentes foram desenvolvidos com base nos testes feitos com **Jasmine**.
+<br>
 <br>
 **Versionamento:**
 
