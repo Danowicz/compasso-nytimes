@@ -53,9 +53,11 @@ A aplicação foi desenvolvida utilizando a versão mais recente do **Angular (v
 
 Nenhuma biblioteca de estilos foi utilizada dentro do projeto, tendo todos os estilos sido desenvolvidos exclusivamente para a aplicação.
 <br>
+<br>
 **Código**:
 
 Todo o código foi escrito utilizando boas práticas de desenvolvimento como **TDD** e **Clean Architecture**, sempre levando em consideração a manutenibilidade e clareza do código , os componentes foram desenvolvidos com base nos testes feitos com **Jasmine**.
+<br>
 <br>
 **Versionamento:**
 
