@@ -3,6 +3,9 @@
 Projeto de consumo de notícias da [API do New York Times](https://developer.nytimes.com/docs/articlesearch-product/1/overview), feito como desafio técnico do processo seletivo da [Compasso UOL](https://compassouol.com/).
 
 ## ▪️ Executando o projeto
+
+🔗 https://compassotimes.danowicz.dev/
+
 Localhost: `ng s`
 Local IP: `ng s --host YOUR_IP`
 
