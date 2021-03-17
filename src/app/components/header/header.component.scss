@@ -62,6 +62,13 @@
             font-family: 'Lato';
             font-weight: 400;
             outline: none;
+            animation: showUp 0.3s backwards ease-in-out;
+        }
+
+        @keyframes showUp {
+            0% {
+              width: 0%;
+            }
         }
 
     }

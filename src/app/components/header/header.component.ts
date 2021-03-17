@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -11,11 +11,10 @@ export class HeaderComponent {
     public isSearching: boolean;
     public queryInput = new FormControl('');
 
-    private searchEvent: EventEmitter<string> = new EventEmitter();
-
+    @Output() private searchEvent: EventEmitter<string> = new EventEmitter();
     @ViewChild('logo') private logo: ElementRef<HTMLImageElement>;
 
-    public handleSearch() {
+    public handleSearch(): void {
         if (this.isSearching) this.search();
         else this.toggleSearchInput();
     }
@@ -25,9 +24,13 @@ export class HeaderComponent {
 	* @param target HostListener's click event.
 	*/
     @HostListener('window:click', ['$event.target'])
-    private handleClick(target: HTMLElement){
+    private handleClick(target: HTMLElement): void{
         const elClass: string = target.className;
-        const isInputOrButton: boolean = (elClass.includes('search__button') || elClass.includes('search__input'));
+
+        const isInputOrButton: boolean =
+            typeof elClass === 'string' &&
+            ( elClass.includes('search__button') || elClass.includes('search__input') );
+
         !isInputOrButton && this.isSearching && this.toggleSearchInput();
     }
 
@@ -42,14 +45,12 @@ export class HeaderComponent {
             logo.src = '../../../assets/logo.svg'
             logo.classList.remove('header__logo--symbol')
         } else {
-            logo.src = '../../../assets/compass.svg'
+            logo.src = '../../../assets/compass.png'
             logo.classList.add('header__logo--symbol')
         }
     }
 
-    private search() {
-        this.toggleSearchInput();
+    private search(): void {
         this.searchEvent.emit(this.queryInput.value);
-        this.queryInput.setValue('');
     }
 }
