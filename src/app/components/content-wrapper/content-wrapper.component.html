@@ -1,0 +1,12 @@
+<p *ngIf="!newsCollection.length && !warning && !routeName" class="welcome"><b>Welcome!</b><br>Search above<br>Switch bellow.</p>
+<app-header (searchEvent)="search($event)"></app-header>
+<div (click)="warning = ''; loadingProgress = 0" *ngIf="warning" class="warning-box">
+    <fa-icon [icon]="['fas', 'exclamation-triangle']"></fa-icon>
+    <p class="warning">{{warning}}</p>
+</div>
+<div class="loading-bar" *ngIf="newsCollection.length" class="loading-bar" [ngStyle]="{'width': loadingProgress + 'vw'}"></div>
+<fa-icon class="loading-spin" *ngIf="loadingProgress < 100 && !newsCollection.length && routeName && !warning" [size]="'4x'" [spin]="true" [icon]="['fas', 'compass']"></fa-icon>
+<div *ngIf="newsCollection.length" class="news-wrapper" infinite-scroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+    <app-news-container *ngFor="let news of newsCollection" (click)="modalHandler(true, news)" [news]="news"></app-news-container>
+</div>
+<app-news-modal (closeModal)="modalHandler(false)" *ngIf="showModal" [news]="modalNews"></app-news-modal>
