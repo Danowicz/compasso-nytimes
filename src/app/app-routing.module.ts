@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { ContentWrapperComponent } from './components/content-wrapper/content-wrapper.component';
 
 const routes: Routes = [
-    { path: '', component: AppComponent} ,
+    { path: '', component: ContentWrapperComponent} ,
     { path: ':type', component: ContentWrapperComponent }
 ];
 
