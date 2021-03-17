@@ -1,7 +1,8 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
+import { Subscription } from 'rxjs';
+import { SearchService } from 'src/app/@core/search.service';
 
 @Component({
     selector: 'app-switch',
@@ -10,39 +11,42 @@ import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 })
 export class SwitchComponent implements OnInit {
 
-    public selectedFilter: string;
+    public routeName: string;
     public icon: [IconPrefix, IconName] = ['fas', 'exchange-alt'];
 
-    constructor(private router: Router, private location: Location) {}
+    private routerSubscription: Subscription;
+
+    constructor(private router: Router, private searchService: SearchService) {}
 
     ngOnInit(): void {
-        this.selectedFilter = this.location.path().replace('/','');
-        this.iconSetter();
+        this.routerSubscription = this.searchService.routeObs
+            .subscribe( route  => {
+                this.routeName = route.replace('/', '');
+                this.iconSetter();
+            });
     }
 
     public switchFilter(): void {
-        switch (this.selectedFilter) {
+        switch (this.routeName) {
             case 'science':
-                this.selectedFilter = 'tech';
-                this.router.navigate(['tech']);
+                this.router.navigate(['technology']);
                 break;
-            case 'tech':
-                this.selectedFilter = 'science';
+            case 'technology':
                 this.router.navigate(['science']);
                 break;
             default:
-                this.selectedFilter = 'science';
+                this.routeName = 'science';
                 this.router.navigate(['science']);
         }
         this.iconSetter();
     }
 
     private iconSetter(): void {
-        switch (this.selectedFilter) {
+        switch (this.routeName) {
             case 'science':
                 this.icon = ['fas', 'atom'];
                 break;
-            case 'tech':
+            case 'technology':
                 this.icon = ['fas', 'rocket'];
                 break;
             default: this.icon = ['fas', 'exchange-alt'];

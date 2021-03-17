@@ -1,5 +1,5 @@
 <div class="switch" (click)="switchFilter()">
-    <button [ngClass]="{'switch__button--active': selectedFilter === 'science'}" class="switch__button">Science</button>
+    <button [ngClass]="{'switch__button--active': routeName === 'science'}" class="switch__button">Science</button>
     <fa-icon [icon]="icon"></fa-icon>
-    <button [ngClass]="{'switch__button--active': selectedFilter === 'tech'}" class="switch__button">Tech</button>
+    <button [ngClass]="{'switch__button--active': routeName === 'technology'}" class="switch__button">Tech</button>
 </div>
